@@ -7,7 +7,7 @@ chances=5
 while chances>0:
     guess=int(input("Enter the number: "))
     if guess==num:
-        print("Wow! You guessed the number correctly.")
+        print("Wow! You guessed the number correctly in ",5-chances+1,"chances.")
         break
     else:
         if guess>num:
@@ -21,7 +21,7 @@ while chances>0:
                     chances-=1
                     print("You have",chances,"chances left.")
         else:
-            if guess-10<num:
+            if guess+10>num:
                 print("Your guess is bit low.")
                 chances-=1
                 print("You have",chances,"chances left.")
