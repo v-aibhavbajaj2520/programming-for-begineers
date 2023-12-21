@@ -31,6 +31,7 @@ for char in ran_password:
   actpass+= char
 print(f"Your {nr_letters+nr_symbols+nr_numbers} digit Password is {actpass}")
 
+##########               OR                ##########
 
 # #Hard Level - Order of characters randomised:
 # #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
@@ -45,4 +46,19 @@ print(f"Your {nr_letters+nr_symbols+nr_numbers} digit Password is {actpass}")
 #   q= password1[ran]
 #   r += q
 # print(r)
-##########               OR                ##########
+
+
+'''After generating password, asking user if he/she want to store it in a text file or not.
+If yes, then asking for some details
+including where it is being used and with which username'''
+
+save= input("Do you want to save this password in a text file? (y/n) ")
+if save=="y":
+  app= input("Where it is being used? ")
+  username= input("With which username? ")
+
+  with open ("password.txt","a") as f:
+    f.write(f"Your Password for {app} of username {username} is {actpass} \n")
+    print("Password saved in password.txt.")
+else:
+  print("Password not saved.")
