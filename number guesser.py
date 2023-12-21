@@ -1,9 +1,20 @@
 import random
 print('''Welcome to number guesser game!
-      In this game you have to guess a number between 1 to 100.''')
+In this game you have to guess a number between 1 to 100.''')
 print("You have 5 chances to guess the number")
 num=random.randint(1,100)
 chances=5
+hint1= input("Do you want a hint? y or n: ")
+if hint1=="y":
+    print("Here is your hint: ")
+    if num>50:
+        print("The number is greater than 50")
+    else:
+        print("The number is less than 50")
+    print("You have 4 chances left.")
+    chances-=1
+
+
 while chances>0:
     guess=int(input("Enter the number: "))
     if guess==num:
